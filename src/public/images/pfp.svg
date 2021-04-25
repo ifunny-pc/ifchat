@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" id="icon_profile" class="chat-img">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#080D11" d="M0 0h100v100H0z">
+        </path>
+        <path d="M30 70.993C30 64.923 34.924 60 40.993 60h18.014C65.079 60 70 64.92 70 70.993V72a2 2 0 1 0 4 0v-1.007C74 62.712 67.288 56 59.007 56H40.993C32.715 56 26 62.714 26 70.993V72a2 2 0 1 0 4 0v-1.007zM59 39a9 9 0 1 0-18 0 9 9 0 0 0 18 0zm-22 0c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13-13-5.82-13-13z" opacity=".3" fill="#FFF" fill-rule="nonzero">
+        </path>
+    </g>
+</svg>

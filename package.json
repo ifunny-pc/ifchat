@@ -1,0 +1,25 @@
+{
+  "name": "ifchat",
+  "version": "1.0.15",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "electron-builder build --win --publish never ",
+    "deploy": "electron-builder build --win --publish always "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron-updater": "^4.3.8",
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "electron": "^12.0.5",
+    "electron-builder": "^22.10.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ifunny-pc/ifunny-chat-pc.git"
+  }
+}
