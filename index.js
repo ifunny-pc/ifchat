@@ -1,5 +1,11 @@
 const { app, BrowserWindow, ipcMain, Notification } = require("electron")
+
 const { autoUpdater } = require('electron-updater')
+
+const log = require("electron-log")
+
+Object.assign(console, log.functions);
+
 
 const windows = {}
 

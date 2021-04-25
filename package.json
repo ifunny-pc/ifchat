@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "electron-log": "^4.3.4",
     "electron-updater": "^4.3.8",
     "jquery": "^3.6.0"
   },
