@@ -23,12 +23,7 @@ app.on("ready", () => {
     })
 
     windows.updater.loadFile("./src/screens/updater/index.html")
-
     autoUpdater.checkForUpdatesAndNotify()
-
-    new Notification({
-        body: "Test notification"
-    }).show()
 })
 
 app.on("window-all-closed", () => {
@@ -42,38 +37,31 @@ ipcMain.on("get-app-version", event => {
 })
 
 autoUpdater.on("update-available", () => {
-    new Notification({
-        body: "an update is available to your app, it will start downloading"
-    }).show()
+    ipcMain.emit("update-available")
 })
 
-
-
 autoUpdater.on("update-downloaded", () => {
-    new Notification({
-        body: "an update has been downloaded to your app, it will now close and install."
-    }).show()
-
     autoUpdater.quitAndInstall()
 })
 
 autoUpdater.on("update-not-available", () => {
-    new Notification({
-        body: "App is up to date!!"
-    }).show()
+    windows.main = new BrowserWindow({
+        width: 800,
+        height: 750,
+        fullscreenable: true,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
+    })
+
+    windows.main.setMenu(null)
+    windows.main.loadFile("./src/screens/is_logged_in/index.html")
+    windows.updater.close()
 })
 
-autoUpdater.on("error", err => {
-    new Notification({
-        body: err.message
-    }).show()
-})
+autoUpdater.on("error", err => {})
 
 autoUpdater.on('download-progress', (progressObj) => {
-    let log_message = "Download speed: " + progressObj.bytesPerSecond;
-    log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
-    log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
-    new Notification({
-        body: log_message
-    }).show()
+    ipcMain.emit("update-progress", { percentage: `${progressObj.percent}%` })
 })

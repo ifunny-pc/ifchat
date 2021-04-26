@@ -34,4 +34,12 @@ $(async () => {
         ipcRenderer.removeAllListeners("app-version")
         $("#version").text(arg.version)
     })
+
+    ipcRenderer.on("update-available", (event, arg) => {
+        $("#status").text("Downloading update...")
+    })
+
+    ipcRenderer.on("update-progress", (event, arg) => {
+        $("#status").text(`Downloading update ${Math.round(arg.percentage)}`)
+    })
 })

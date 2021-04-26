@@ -25,36 +25,36 @@ html, body {
     background-color: var(--grey);
 }
 
-.center {
+div.center {
     height: fit-content;
     display: flex;
     align-items: center;
-    justify-content: center 
+    justify-content: center;
 }
 
-.center > img {
+div.center > img#logo {
     border-radius: 50%;
     width: 40%;
     height: auto;
     margin-top: 15%;
 }
 
-.center > span {
+div.center > span#status {
     font-family: "proximanova-bold";
     color: var(--light-grey);
 }
 
-.center > img::selection {
+div.center > img::selection {
     background: transparent;
 }
 
-.bottom-right {
+div.bottom-right {
     position: absolute;
     bottom: 5px;
     left: 5px;
 }
 
-.bottom-right > #version {
+div.bottom-right > span#version {
     font-family: "proximanova-regular";
     color: var(--light-grey);
 }
